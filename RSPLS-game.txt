@@ -1,0 +1,69 @@
+#Purpose: To creat a program that will simulate this game of Rock, Paper, Scissors, Lizard, Spock! between the user and the computer.
+ 
+ 
+import random
+r_int = random.randrange(0,4) #Setting variable r_int equal to random numbers
+possible_options = ["Rock" ,"Scissors", "Spock", "Paper", "Lizard"] #Setting variable possible_options equal to a list that holds the possible choices for the user.
+ 
+ 
+sanitized_choice = "" #Initializing variable named sanitized_choice that holds nothing
+while (sanitized_choice == ""):
+ choice = input("Choose one of the five: Rock, Paper, Scissors, Lizard or Spock. Make sure it is spelled and written correctly. ")#Prompting the user for an option
+ if (choice in possible_options):# Checking if the option provided by the user is valid
+   sanitized_choice = choice # if the previous choice is true, sanitized_choice now holds choice(the user input)
+ 
+ 
+choice_2 = possible_options[r_int] # Enables randomizing process. Uses the the library to randomly pick an option from the list.
+print ("Computer's choice was: " + choice_2)
+ 
+LOSING_MSG = "You lost try again." # Creating a constant called losing message that holds a string: "You lost. Try again"
+WINNING_MSG = "You win! Congrats." # Creating a constant called WINNING_MSG message that holds a string: "You win. Congrats"
+ERROR ="Cannot choose the same choice twice. Choose again" # Creating a constant called ERROR message that holds a string: "Cannot choose the same choice twice. Choose again"
+ 
+ 
+if (sanitized_choice=="Spock"):
+ if (choice_2 == "Scissors")or(choice_2 == "Rock"):
+   print (WINNING_MSG)
+ elif (choice_2 == "Paper")or(choice_2 == "Lizard"):
+   print(LOSING_MSG)
+ else:
+   print (ERROR)
+elif (sanitized_choice == "Lizard"):
+ if (choice_2 == "Spock")or(choice_2 == "Paper"):
+   print(WINNING_MSG)
+ elif (choice_2 == "Scissors")or(choice_2 == "Rock"):
+   print(LOSING_MSG)
+ else:
+   print(ERROR)
+elif (sanitized_choice == "Rock"):
+ if (choice_2 == "Spock")or(choice_2 == "Paper"):
+   print(LOSING_MSG)
+ elif (choice_2 == "Scissors")or(choice_2 == "Lizard"):
+   print(WINNING_MSG)
+ else:
+   print(ERROR)
+elif (sanitized_choice == "Scissors"):
+ if (choice_2== "Rock")or(choice_2 == "Spock"):
+   print (LOSING_MSG)
+ elif (choice_2 == "Paper")or(choice_2 == "Lizard"):
+   print(WINNING_MSG)
+ else:
+   print(ERROR)
+elif (sanitized_choice == "Paper"):
+ if (choice_2== "Scissors")or(choice_2 == "Lizard"):
+   print (LOSING_MSG)
+ elif (choice_2 == "Spock")or(choice_2 == "Rock"):
+   print(WINNING_MSG)
+ else:
+   print(ERROR)
+elif (sanitized_choice == "Scissors"):
+ if (choice_2== "Rock")or(choice_2 == "Spock"):
+   print (LOSING_MSG)
+ elif (choice_2 == "Lizard")or(choice_2 == "Paper"):
+   print(WINNING_MSG)
+ else:
+   print(ERROR)
+else:
+ print("Error. Please try again.")
+ 
+ 
